@@ -33,4 +33,21 @@ describe('enhancer module', () => {
             expect(actualOutput.enhancement).toBe(expectedOutput.enhancement);
          })
     });
+
+    describe('fail function', () => {
+        it('decreases durability to 0 if enhancement is less than 15 and durability is 5 or less', () => {
+            const item = {
+                name: "TestItem",
+                durability: 2,
+                enhancement: 1
+            };
+            const expectedOutput = {
+                name: "TestItem",
+                durability: 0,
+                enhancement: 1
+            };
+            const actualOutput = enhancer.fail(item);
+            expect(actualOutput.enhancement).toBe(expectedOutput.enhancement);
+        })
+    })
 });
