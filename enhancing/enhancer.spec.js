@@ -125,4 +125,21 @@ describe('enhancer module', () => {
             expect(actualOutput.enhancement).toBe(expectedOutput.enhancement);
         })
     })
+
+    describe('repair function', () => {
+        it('sets durability to 100', () => {
+            const item = {
+                name: "TestItem",
+                durability: 11,
+                enhancement: 18
+            };
+            const expectedOutput = {
+                name: "TestItem",
+                durability: 100,
+                enhancement: 18
+            };
+            const actualOutput = enhancer.repair(item);
+            expect(actualOutput.durability).toBe(expectedOutput.durability);
+        })
+    })
 });

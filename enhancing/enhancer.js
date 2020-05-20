@@ -36,6 +36,7 @@ function fail(item) {
 }
 
 function repair(item) {
+  item.durability = 100;
   return { ...item };
 }
 
