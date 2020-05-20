@@ -158,5 +158,20 @@ describe('enhancer module', () => {
             const actualOutput = enhancer.get(item);
             expect(actualOutput.name).toBe(expectedOutput.name);
         })
+
+        it('changes the name if enhancement is > 0', () => {
+            const item = {
+                name: "Sword Of Wonder",
+                durability: 100,
+                enhancement: 7
+            };
+            const expectedOutput = {
+                name: "[+7] Sword Of Wonder",
+                durability: 100,
+                enhancement: 7
+            };
+            const actualOutput = enhancer.get(item);
+            expect(actualOutput.name).toBe(expectedOutput.name);
+         })
     })
 });
