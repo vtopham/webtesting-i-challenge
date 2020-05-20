@@ -17,5 +17,20 @@ describe('enhancer module', () => {
             const actualOutput = enhancer.succeed(item);
             expect(actualOutput.enhancement).toBe(expectedOutput.enhancement);
         });
+
+        it ('does not increase if enhancement is already 20', () => {
+            const item = {
+                name: "TestItem",
+                durability: 100,
+                enhancement: 20
+            };
+            const expectedOutput = {
+                name: "TestItem",
+                durability: 100,
+                enhancement: 20
+            };
+            const actualOutput = enhancer.succeed(item);
+            expect(actualOutput.enhancement).toBe(expectedOutput.enhancement);
+         })
     });
 });
